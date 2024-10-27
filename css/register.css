@@ -1,0 +1,171 @@
+@font-face {
+    font-family: 'SDAsian';
+    src: url('fonts/Sdasian-WyDon.ttf') format('truetype');
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    font-family: 'SDAsian', sans-serif;
+    background-color: #1f1f1f
+}
+
+.navbar ul {
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.navbar-toggler {
+    background-color: #ffc107; 
+    border-radius: 5px; 
+}
+
+footer {
+    background-color: #1f1f1f; /* Используем один цвет */
+    font-family: SDAsian, sans-serif;
+    color: #e0e0e0; 
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-content div {
+    margin: 10px;
+}
+
+footer a {
+    color: #fac200; /* Оранжевый цвет ссылок */
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: #fff; /* Белый при наведении */
+}
+
+/* Основные стили для формы */
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+}
+
+.multi-step-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+.multi-step-form h2, .multi-step-form h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-label {
+    color:#121212
+}
+.multi-step-form .step.active {
+    display: block; /* Только активный шаг будет отображаться */
+}
+
+/* Поля формы */
+.form-control {
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.form-control:focus {
+    border-color: #ff9900;
+    box-shadow: 0 0 5px rgba(255, 153, 0, 0.5);
+}
+
+/* Кнопки */
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.btn-warning {
+    background-color: #ff9900;
+    color: white;
+}
+
+button.btn-warning:hover {
+    background-color: #e68a00;
+}
+
+button.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+button.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+button.btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+button.btn-success:hover {
+    background-color: #218838;
+}
+
+/* Ошибки */
+.error {
+    color: red;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    .multi-step-form {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}

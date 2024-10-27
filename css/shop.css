@@ -1,0 +1,236 @@
+@font-face {
+    font-family: 'SDAsian';
+    src: url('fonts/Sdasian-WyDon.ttf') format('truetype');
+}
+
+#header-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; 
+}
+
+@font-face {
+    font-family: 'SDAsian';
+    src: url('fonts/Sdasian-WyDon.ttf') format('truetype');
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    font-family: 'SDAsian', sans-serif;
+    background-color: #1f1f1f
+}
+
+.logo{
+    color: #ffffff;
+    font-size: 50px;
+}
+.navbar ul {
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+}
+.navbar-toggler {
+    background-color: #ffc107; 
+    border-radius: 5px; 
+}
+
+footer {
+    background-color: #1f1f1f; /* Используем один цвет */
+    font-family: SDAsian, sans-serif;
+    color: #e0e0e0; 
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-content div {
+    margin: 10px;
+}
+
+footer a {
+    color: #fac200; /* Оранжевый цвет ссылок */
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: #fff; /* Белый при наведении */
+}
+
+
+.hero {
+    background: url('images/hero-background.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+}
+
+.cta-button {
+    background: #ff6600;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background: #e65c00;
+}
+
+.categories, .featured-products, .special-offers, .newsletter {
+    padding: 2rem;
+    background: #fff;
+    margin: 1rem 0;
+}
+
+.category-list, .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.category-item, .product-item {
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.add-to-cart:hover, .wishlist-button:hover {
+    background: #e65c00;
+}
+.category-item img {
+    width: 200px; /* Ширина изображений */
+    height: 200px; /* Высота изображений */
+    object-fit: cover; /* Подгоняет изображение по размеру, сохраняя пропорции */
+    border-radius: 10px; /* Круглые углы по желанию */
+}
+.product-grid {
+    display: flex;
+    justify-content: space-around; /* Распределяет пространство между элементами */
+    flex-wrap: wrap; /* Позволяет элементам переходить на следующую строку, если экран слишком узкий */
+    gap: 20px; /* Расстояние между элементами продукта */
+}
+
+.categories {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.category-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.category-item {
+    text-align: center;
+    margin: 10px;
+}
+
+.category-item img {
+    width: 150px; /* Задайте нужный размер изображения */
+    height: 150px;
+    border-radius: 50%; /* Сделает изображение круглым */
+    object-fit: cover; /* Изображение будет обрезаться, чтобы сохранить пропорции */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Дополнительно добавим тень для красоты */
+}
+
+.category-item h3 {
+    margin-top: 10px;
+}
+
+/*Карусель*/
+
+/* General container styling */
+.my-carousel {
+    margin: 0 auto;
+    max-width: 800px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Carousel image styling */
+.carousel-inner img {
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Carousel caption text styling */
+.carousel-caption h5 {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Carousel control button styling */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #000;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+/* Carousel indicators styling */
+.carousel-indicators button {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #000;
+}
+
+.carousel-indicators .active {
+    background-color: #fff;
+}
+
+.category-item:hover {
+    background: #d8d3d3;
+}
+
+.card:hover{
+    background: #d8d3d3;
+}
+

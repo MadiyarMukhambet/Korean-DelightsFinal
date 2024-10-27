@@ -1,0 +1,244 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #FFFFFF;
+}
+
+@font-face {
+    font-family: 'SDAsian';
+    src: url('fonts/Sdasian-WyDon.ttf') format('truetype');
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+     display: flex;
+    font-family: 'SDAsian', sans-serif;
+    background-color: #1f1f1f;
+    padding: 20px;
+    position: relative;
+    align-items: center; /* Выравниваем логотип и навигацию по вертикали */
+}
+
+.logo h1 {
+    color: #ffffff;
+    margin: 0;
+    font-size: 50px;
+}
+.nav {
+            margin-left: 150px;
+            font-style: italic;
+    }
+.nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav ul li {
+    display: inline-block;
+}
+
+.nav ul li a {
+    color: #e0e0e0; /* Светлый текст */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.nav ul li a:hover {
+    color: #ff8c00; /* Оранжевый при наведении */
+}
+
+.signup {
+    position: absolute;
+    top: 10px; /* Расположим немного выше search-bar */
+    right: 50px; /* Отступ от правого края */
+}
+
+.signup ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.signup li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.signup li a:hover {
+    color: #ff8c00;
+}
+
+.search-bar {
+    position: absolute;
+    top: 50px; /* Расположим ниже signup */
+    right: 20px; /* Выравниваем по правому краю */
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 5px;
+    background-color: #2c2c2c; /* Темный фон поля ввода */
+    border: none;
+    color: #ffffff;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.search-bar button {
+    background-color: #ff8c00; /* Оранжевая кнопка */
+    border: none;
+    padding: 5px 10px;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.search-bar button:hover {
+    background-color: #e67e00; /* Тёмный оранжевый при наведении */
+}
+
+footer {
+    background-color: #1f1f1f; /* Используем один цвет */
+    font-family: SDAsian, sans-serif;
+    color: #e0e0e0; 
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-content div {
+    margin: 10px;
+}
+
+footer a {
+    color: #fac200; /* Оранжевый цвет ссылок */
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: #fff; /* Белый при наведении */
+}
+
+.hero {
+    background: url('images/hero-background.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+}
+
+.cta-button {
+    background: #ff6600;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background: #e65c00;
+}
+
+.categories, .featured-products, .special-offers, .newsletter {
+    padding: 2rem;
+    background: #fff;
+    margin: 1rem 0;
+}
+
+.category-list, .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.category-item, .product-item {
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.add-to-cart, .wishlist-button {
+    background: #ff6600;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.add-to-cart:hover, .wishlist-button:hover {
+    background: #e65c00;
+}
+
+.footer-content {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.social-links li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.social-links li a:hover {
+    text-decoration: underline;
+}
+

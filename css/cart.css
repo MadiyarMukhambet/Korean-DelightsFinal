@@ -1,0 +1,188 @@
+
+@font-face {
+    font-family: 'SDAsian';
+    src: url('fonts/Sdasian-WyDon.ttf') format('truetype');
+}
+
+body {
+    background-color: #121212;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    font-family: 'SDAsian', sans-serif;
+    background-color: #1f1f1f
+}
+
+.navbar ul {
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+}
+.navbar-toggler {
+    background-color: #ffc107; 
+    border-radius: 5px; 
+}
+
+footer {
+    background-color: #1f1f1f; /* Используем один цвет */
+    font-family: SDAsian, sans-serif;
+    color: #e0e0e0; 
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-content div {
+    margin: 10px;
+}
+
+footer a {
+    color: #fac200; /* Оранжевый цвет ссылок */
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: #fff; /* Белый при наведении */
+}
+
+.hero {
+    background: url('images/hero-background.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+}
+
+.cta-button {
+    background: #ff6600;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background: #e65c00;
+}
+
+.categories, .featured-products, .special-offers, .newsletter {
+    padding: 2rem;
+    background: #fff;
+    margin: 1rem 0;
+}
+
+.category-list, .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.category-item, .product-item {
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.add-to-cart, .wishlist-button {
+    background: #ff6600;
+    color: #020000;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.add-to-cart:hover, .wishlist-button:hover {
+    background: #e65c00;
+}
+
+.footer-content {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.social-links li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.social-links li a:hover {
+    text-decoration: underline;
+}
+.cart-items {
+    display: flex;
+    justify-content: space-around; /* Распределяет элементы по горизонтали с равными отступами */
+    flex-wrap: wrap; /* Позволяет элементам переноситься на следующую строку при недостатке места */
+    gap: 20px; /* Задает расстояние между элементами */
+}
+
+.cart-item {
+    flex: 1;
+    max-width: 300px; /* Ограничивает ширину каждого элемента */
+    text-align: center; /* Центрирует текст и контент */
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Легкая тень для эффекта */
+}
+.cart-item img {
+    width: 200px; 
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 10px; 
+} 
+.cart-summary {
+    text-align: center; 
+}
+
+.card:hover{
+    background: #d8d3d3;
+}
