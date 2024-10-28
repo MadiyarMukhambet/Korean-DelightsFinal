@@ -86,6 +86,41 @@
         </div>
     </section>
 
+    <section class="product-filter">
+    <h3>Filter Products</h3>
+
+    <!-- Фильтр по цене -->
+    <div class="price-filter">
+        <label for="min-price">Min Price:</label>
+        <input type="number" id="min-price" placeholder="0" min="0">
+        <label for="max-price">Max Price:</label>
+        <input type="number" id="max-price" placeholder="100" min="0">
+    </div>
+
+    <!-- Фильтр по категориям -->
+    <div class="category-filter">
+        <label for="category">Category:</label>
+        <select id="category">
+            <option value="all" selected>All</option>
+            <option value="noodles">Instant Noodles</option>
+            <option value="spices">Spices</option>
+            <option value="sauces">Sauces</option>
+            <option value="snacks">Snacks</option>
+        </select>
+    </div>
+
+    <!-- Специальные предложения -->
+    <div class="offers-filter">
+        <label>
+            <input type="checkbox" id="special-offer" value="special">
+            Only Special Offers
+        </label>
+    </div>
+
+    <button id="apply-filter" class="btn btn-outline-warning">Apply Filter</button>
+</section>
+
+
     <section class="categories">
         <h2>Popular Categories</h2>
         <div class="category-list">
@@ -152,25 +187,26 @@
     <section class="featured-products">
         <h2>Featured Products</h2>
         <div class="product-list">
-            <div class="product-item">
+            <div class="product-item" data-category="noodles" data-special-offer="true">
                 <img src="image/buldak.jpg" alt="Buldak Spicy Noodles">
                 <h3 class="product-title">Buldak Spicy Noodles</h3>
                 <p>$3.99</p>
-                <a href="product.html" class="add-to-cart"><button class="btn btn-danger">View Details</button></a>
+                <button class="btn btn-danger">View Details</button>
                 <a class="add-to-wishlist"><button class="btn btn-danger"><i class="bi bi-bag-heart"></i>Add to Wishlist</button></a>
-            </div>
-            <div class="product-item">
+            </div>            
+            <div class="product-item" data-category="spices" data-special-offer="false">
                 <img src="image/kimchi.jpg" alt="Kimchi Seasoning">
                 <h3 class="product-title">Kimchi Seasoning</h3>
                 <p>$4.99</p>
                 <a href="product.html" class="add-to-cart"><button class="btn btn-danger">View Details</button></a>
                 <a class="add-to-wishlist"><button class="btn btn-danger"><i class="bi bi-bag-heart"></i>Add to Wishlist</button></a>
             </div>
-            <div class="product-item">
-                <img src="image/Toasted_Perilla_Oil.png" style="width: 350px;height: 500px;" alt="Beksul">
-                <h3 class="product-title">Toasted_Perilla_Oil</h3>
+        
+            <div class="product-item" data-category="sauces" data-special-offer="false">
+                <img src="image/Toasted_Perilla_Oil.png" style="width: 350px;height: 500px;" alt="Toasted Perilla Oil">
+                <h3 class="product-title">Toasted Perilla Oil</h3>
                 <p>$31.99</p>
-                <a href="Toasted_Perilla_Oil.html" class="add-to-cart"><button class="btn btn-danger">View Details</button></a>
+                <a href="image/Toasted_Perilla_Oil.html" class="add-to-cart"><button class="btn btn-danger">View Details</button></a>
                 <a class="add-to-wishlist"><button class="btn btn-danger"><i class="bi bi-bag-heart"></i>Add to Wishlist</button></a>
             </div>
         </div>
@@ -181,14 +217,15 @@
         <div class="offer-item">
             <h3>20% Off on Sauces</h3>
             <p>Use code: SPICY20</p>
-            <a href="shop.html" class="btn btn-danger"><i class="fa-solid fa-cart-shopping"></i>Shop Now</a>
+            <a href="shop.html" class="btn btn-danger"><i class="fa-solid fa-cart-shopping"></i> Shop Now</a>
         </div>
         <div class="offer-item">
             <h3>Buy 2 Get 1 Free on Snacks</h3>
             <p>Available on selected items</p>
-            <a href="shop.html" class="btn btn-danger"><i class="fa-solid fa-cart-shopping"></i>Shop Now</a>
+            <a href="shop.html" class="btn btn-danger"><i class="fa-solid fa-cart-shopping"></i> Shop Now</a>
         </div>
     </section>
+
 
     <section class="newsletter">
         <h2>Subscribe for Offers</h2>

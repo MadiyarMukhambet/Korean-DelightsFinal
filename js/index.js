@@ -49,19 +49,58 @@ applyTranslations('en');
         });
     });
 
+//Manipulating Attributes(read more)
+// Функция для получения сохраненных состояний блоков
+function getReadMoreStates() {
+    return JSON.parse(localStorage.getItem('readMoreStates')) || {};
+}
 
-    document.querySelectorAll('.categories .read-more').forEach(button => {
-    button.addEventListener('click', () => {
+// Функция для сохранения состояний блоков
+function saveReadMoreStates(states) {
+    localStorage.setItem('readMoreStates', JSON.stringify(states));
+}
+
+// Применение сохраненных состояний при загрузке страницы
+function applyReadMoreStates() {
+    const readMoreStates = getReadMoreStates();
+    document.querySelectorAll('.categories .read-more').forEach((button, index) => {
         const additionalContent = button.nextElementSibling;
-        if (additionalContent.style.display === 'none') {
-            additionalContent.style.display = 'block'; 
-            button.textContent = 'Read Less'; 
+        
+        // Применяем сохраненное состояние для каждого блока
+        if (readMoreStates[index]) {
+            additionalContent.style.display = 'block';
+            button.textContent = 'Read Less';
         } else {
-            additionalContent.style.display = 'none'; 
-            button.textContent = 'Read More'; 
+            additionalContent.style.display = 'none';
+            button.textContent = 'Read More';
         }
     });
+}
+
+// Добавление обработчиков событий для кнопок "Read More"
+document.querySelectorAll('.categories .read-more').forEach((button, index) => {
+    button.addEventListener('click', () => {
+        const additionalContent = button.nextElementSibling;
+        const readMoreStates = getReadMoreStates();
+
+        // Переключаем состояние видимости контента и обновляем кнопку
+        if (additionalContent.style.display === 'none') {
+            additionalContent.style.display = 'block';
+            button.textContent = 'Read Less';
+            readMoreStates[index] = true; // Сохраняем состояние "открыто"
+        } else {
+            additionalContent.style.display = 'none';
+            button.textContent = 'Read More';
+            readMoreStates[index] = false; // Сохраняем состояние "закрыто"
+        }
+        
+        saveReadMoreStates(readMoreStates); // Сохраняем обновленные состояния в localStorage
+    });
 });
+
+// Применяем сохраненные состояния при загрузке страницы
+document.addEventListener('DOMContentLoaded', applyReadMoreStates);
+
 
 // FAQ
 document.querySelectorAll('.faq-question').forEach(button => {
@@ -121,15 +160,12 @@ alert(`You have successfully subscribed with ${email}`);
 modal.style.display = "none"; 
 });
 
+//Keyboard Event Handling
 const menuItems = document.querySelectorAll('.navbar-nav .nav-link button');
-
-
 let currentIndex = 0;
-
 function setFocus(index) {
 menuItems[index].focus();
 }
-
 document.addEventListener('keydown', (event) => {
 if (event.key === 'ArrowUp') {
     currentIndex = (currentIndex + 1) % menuItems.length;
@@ -141,14 +177,102 @@ if (event.key === 'ArrowUp') {
     event.preventDefault(); 
 }
 });
-
 setFocus(currentIndex);
 
+// Функция для получения сохраненных товаров в вишлисте из localStorage
+function getWishlistItems() {
+    return JSON.parse(localStorage.getItem('wishlistItems')) || [];
+}
+
+// Функция для сохранения товаров в вишлисте в localStorage
+function saveWishlistItems(items) {
+    localStorage.setItem('wishlistItems', JSON.stringify(items));
+}
+
+// Применение сохраненного стиля для товаров в вишлисте
+function applyWishlistStyles() {
+    const wishlistItems = getWishlistItems();
+    document.querySelectorAll('.product-item').forEach(card => {
+        const productTitle = card.querySelector('.product-title').textContent;
+        if (wishlistItems.includes(productTitle)) {
+            // Изменяем фон, если товар сохранен в вишлисте
+            card.style.backgroundColor = '#f8d7da';
+        }
+    });
+}
+
+// Добавляем товар в вишлист и сохраняем состояние
 document.querySelectorAll('.add-to-wishlist button').forEach(button => {
     button.addEventListener('click', () => {
         const card = button.closest('.product-item');
         const productTitle = card.querySelector('.product-title').textContent;
-        alert(`You added ${productTitle} to the wishlist!`);
+        
+        // Сохраняем товар в localStorage
+        let wishlistItems = getWishlistItems();
+        if (!wishlistItems.includes(productTitle)) {
+            wishlistItems.push(productTitle);
+            saveWishlistItems(wishlistItems);
+        }
+
+        // Изменяем стиль карточки
         card.style.backgroundColor = '#f8d7da';
+        alert(`You added ${productTitle} to the wishlist!`);
     });
+});
+
+// Применяем стили для товаров в вишлисте при загрузке страницы
+document.addEventListener('DOMContentLoaded', applyWishlistStyles);
+
+
+ document.addEventListener("DOMContentLoaded", function () {
+    // Загрузка фильтров из localStorage
+    const savedMinPrice = localStorage.getItem("minPrice") || "";
+    const savedMaxPrice = localStorage.getItem("maxPrice") || "";
+    const savedCategory = localStorage.getItem("category") || "all";
+    const savedSpecialOffer = localStorage.getItem("specialOffer") === "true";
+
+    document.getElementById("min-price").value = savedMinPrice;
+    document.getElementById("max-price").value = savedMaxPrice;
+    document.getElementById("category").value = savedCategory;
+    document.getElementById("special-offer").checked = savedSpecialOffer;
+
+    // Функция фильтрации
+    function filterProducts() {
+        const minPrice = parseFloat(document.getElementById("min-price").value) || 0;
+        const maxPrice = parseFloat(document.getElementById("max-price").value) || Infinity;
+        const selectedCategory = document.getElementById("category").value;
+        const onlySpecialOffers = document.getElementById("special-offer").checked;
+
+        // Сохранение фильтров
+        localStorage.setItem("minPrice", minPrice);
+        localStorage.setItem("maxPrice", maxPrice);
+        localStorage.setItem("category", selectedCategory);
+        localStorage.setItem("specialOffer", onlySpecialOffers);
+
+        const products = document.querySelectorAll(".product-item");
+        products.forEach((product) => {
+            const priceText = product.querySelector("p").innerText;
+            const price = parseFloat(priceText.replace("$", ""));
+            const category = product.dataset.category;
+            const isSpecialOffer = product.dataset.specialOffer === "true";
+
+            // Применение условий фильтрации
+            const meetsPriceCondition = price >= minPrice && price <= maxPrice;
+            const meetsCategoryCondition = selectedCategory === "all" || category === selectedCategory;
+            const meetsSpecialOfferCondition = !onlySpecialOffers || isSpecialOffer;
+
+            // Показ или скрытие продукта на основе фильтров
+            if (meetsPriceCondition && meetsCategoryCondition && meetsSpecialOfferCondition) {
+                product.style.display = "block";
+            } else {
+                product.style.display = "none";
+            }
+        });
+    }
+
+    // Применение фильтра при загрузке страницы
+    filterProducts();
+
+    // Обработчик кнопки "Apply Filter"
+    document.getElementById("apply-filter").addEventListener("click", filterProducts);
 });
