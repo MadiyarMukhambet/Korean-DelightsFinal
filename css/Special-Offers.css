@@ -1,10 +1,26 @@
-/* Special Offers Section */
+
+:root {
+    --background-color: #1f1f1f;
+    --text-color: #ffffff;
+    --color-base: 1, 1, 1;
+    --offer-time: #ccc;
+    --offer-timeP: #777;
+}
+.light-mode {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --color-base: 0, 0, 0;
+    --offer-time: #333;
+    --offer-timeP: #888;
+
+}
+
 .special-offers {
     margin: 40px auto;
     padding: 20px;
     max-width: 800px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--background-color);
+    box-shadow: 0 4px 8px rgba(var(--color-base) 0.1);
 }
 
 .special-offers h2 {
@@ -14,7 +30,7 @@
 }
 
 .offer-item {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--offer-time);
     padding: 15px 0;
     display: flex;
     align-items: center;
@@ -27,41 +43,32 @@
 }
 
 .offer-item h3 {
-    color: #333;
+    color: var(--offer-time);
     font-size: 18px;
     margin-bottom: 5px;
 }
 
 .offer-item p {
-    color: #777;
+    color: var(--offer-timeP);
     margin: 5px 0;
 }
 
 .add-to-cart:hover {
-    background-color: #e55d00;
+    background-color: var(--background-color);
 }
 @font-face {
     font-family: 'SDAsian';
     src: url('fonts/Sdasian-WyDon.ttf') format('truetype');
 }
-
-body {
-    background-color: #ffffff;
-    color: #e0e0e0;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+header h1 {
+    color: var(--text-color);
+    font-size: 50px;
 }
 
 header {
     display: flex;
     font-family: 'SDAsian', sans-serif;
-    background-color: #1f1f1f
-}
-
-h1{
-    color: #ffffff;
-    font-size: 50px;
+    background-color: var(--background-color);
 }
 
 .navbar ul {
@@ -74,16 +81,22 @@ h1{
     font-weight: bold;
     font-size: 25px;
 }
-
 .navbar-toggler {
     background-color: #ffc107; 
     border-radius: 5px; 
 }
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
 footer {
-    background-color: #1f1f1f; /* Используем один цвет */
+    background-color: var(--background-color); /* Используем один цвет */
     font-family: SDAsian, sans-serif;
-    color: #e0e0e0; 
+    color: var(--text-color); 
     padding: 20px 0;
     text-align: center;
     position: relative;
@@ -112,8 +125,9 @@ footer a {
 }
 
 footer a:hover {
-    color: #fff; /* Белый при наведении */
+    color: var(--button-text-color); /* Белый при наведении */
 }
+
 .categories {
     text-align: center;
     margin: 20px 0;
@@ -135,7 +149,7 @@ footer a:hover {
     height: 150px;
     border-radius: 50%; /* Сделает изображение круглым */
     object-fit: cover; /* Изображение будет обрезаться, чтобы сохранить пропорции */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Дополнительно добавим тень для красоты */
+    box-shadow: 0 4px 8px rgba(var(--color-base) 0.1); /* Дополнительно добавим тень для красоты */
 }
 
 .category-item h3 {
@@ -144,12 +158,12 @@ footer a:hover {
 
 .product-price {
     font-size: 18px;
-    color:#ee6e73
+    color:var(--text-color);
     font-weight: 600;
 }
 
 .product-price small {
-    color: #ccc ;
+    color: var(--offer-time) ;
     font-weight: 400;
     text-decoration: line-through;
     margin-right: 5px;
@@ -157,13 +171,16 @@ footer a:hover {
 
 .product-prices {
     font-size: 18px;
-    color:#ee6e73
+    color:var(--text-color);
     font-weight: 600;
 }
 
 .product-prices small {
-    color: #ccc ;
+    color: var(--offer-time) ;
     font-weight: 400;
     text-decoration: line-through;
     margin-right: 10px;
+}
+span {
+    color: var(--text-color);
 }

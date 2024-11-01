@@ -4,17 +4,26 @@
 }
 
 body {
-    background-color: #121212;
-    color: #e0e0e0;
+    background-color: var(--background-color);
+    color: var(--text-color);
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+}
+:root {
+    --background-color: #1f1f1f;
+    --text-color: #ffffff;
+}
+.light-mode {
+    --background-color: #ffffff;
+    --text-color: #000000;
+
 }
 
 header {
     display: flex;
     font-family: 'SDAsian', sans-serif;
-    background-color: #1f1f1f
+    background-color: var(--background-color);
 }
 
 .navbar ul {
@@ -27,16 +36,15 @@ header {
     font-weight: bold;
     font-size: 25px;
 }
-
 .navbar-toggler {
     background-color: #ffc107; 
     border-radius: 5px; 
 }
 
 footer {
-    background-color: #1f1f1f; /* Используем один цвет */
+    background-color: var(--background-color); /* Используем один цвет */
     font-family: SDAsian, sans-serif;
-    color: #e0e0e0; 
+    color: var(--text-color); 
     padding: 20px 0;
     text-align: center;
     position: relative;
@@ -65,7 +73,12 @@ footer a {
 }
 
 footer a:hover {
-    color: #fff; /* Белый при наведении */
+    color: var(--button-text-color); /* Белый при наведении */
+}
+.signup {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 /* Основные стили для формы */
@@ -74,7 +87,7 @@ footer a:hover {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f9f9f9;
+    background-color: var(--background-color);
 }
 
 .multi-step-form {

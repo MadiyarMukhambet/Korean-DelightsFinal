@@ -1,11 +1,45 @@
+// Функция для получения товаров в корзине из localStorage
+function getCartItems() {
+    return JSON.parse(localStorage.getItem('cartItems')) || [];
+}
+
+// Функция для сохранения товаров в корзине в localStorage
+function saveCartItems(items) {
+    localStorage.setItem('cartItems', JSON.stringify(items));
+}
+
+// Функция для применения стиля к товарам, уже добавленным в корзину
+function applyCartStyles() {
+    const cartItems = getCartItems();
+    document.querySelectorAll('.offer-item').forEach(card => {
+        const productTitle = card.querySelector('.offer-title').textContent;
+        if (cartItems.includes(productTitle)) {
+            card.style.backgroundColor = '#f8d7da';
+        }
+    });
+}
+
+// Добавление товара в корзину и изменение стиля карточки
 document.querySelectorAll('.add-to-card button').forEach(button => {
     button.addEventListener('click', () => {
         const card = button.closest('.offer-item');
         const productTitle = card.querySelector('.offer-title').textContent;
-        alert(`You added ${productTitle} to the card!`);
+        
+        alert(`You added ${productTitle} to the cart!`);
         card.style.backgroundColor = '#f8d7da';
+
+        // Сохраняем продукт в localStorage для корзины
+        let cartItems = getCartItems();
+        if (!cartItems.includes(productTitle)) {
+            cartItems.push(productTitle);
+            saveCartItems(cartItems);
+        }
     });
 });
+
+// Применение сохраненных стилей при загрузке страницы
+document.addEventListener('DOMContentLoaded', applyCartStyles);
+
 
 //Event Listeners on Buttons
 const showTimeBtn = document.getElementById('showTimeBtn');
@@ -14,7 +48,7 @@ const displayTime = document.getElementById('displayTime');
 showTimeBtn.addEventListener('click', () => {
 const currentTime = new Date().toLocaleTimeString();
 
-displayTime.innerHTML = `<span style="color: black;">Current time: ${currentTime}</span>`;
+displayTime.innerHTML = `<span>Current time: ${currentTime}</span>`;
 });
 
 

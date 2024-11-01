@@ -1,20 +1,63 @@
+// Функция для получения товаров в корзине из localStorage
+function getCartItems() {
+    return JSON.parse(localStorage.getItem('cartItems')) || [];
+}
+
+// Функция для сохранения товаров в корзине в localStorage
+function saveCartItems(items) {
+    localStorage.setItem('cartItems', JSON.stringify(items));
+}
+
+// Функция для применения стиля к товарам, уже добавленным в корзину
+function applyCartStyles() {
+    const cartItems = getCartItems();
+    document.querySelectorAll('.card-body').forEach(card => {
+        const productTitle = card.querySelector('.card-title').textContent;
+        if (cartItems.includes(productTitle)) {
+            card.style.backgroundColor = '#f8d7da';
+        } else {
+            card.style.backgroundColor = '#ffffff';
+        }
+    });
+}
+
+// Добавление товара в корзину и изменение стиля карточки
 document.querySelectorAll('.add-to-card button').forEach(button => {
     button.addEventListener('click', () => {
         const card = button.closest('.card-body');
         const productTitle = card.querySelector('.card-title').textContent;
-        alert(`You added ${productTitle} to the card!`);
+        
+        alert(`You added ${productTitle} to the cart!`);
         card.style.backgroundColor = '#f8d7da';
+
+        // Сохраняем товар в localStorage
+        let cartItems = getCartItems();
+        if (!cartItems.includes(productTitle)) {
+            cartItems.push(productTitle);
+            saveCartItems(cartItems);
+        }
     });
 });
 
+// Удаление товара из корзины и изменение стиля карточки
 document.querySelectorAll('.remove-from-card button').forEach(button => {
     button.addEventListener('click', () => {
         const card = button.closest('.card-body');
         const productTitle = card.querySelector('.card-title').textContent;
-        alert(`You removed ${productTitle} from the card!`);
+
+        alert(`You removed ${productTitle} from the cart!`);
         card.style.backgroundColor = '#ffffff';
+
+        // Удаляем товар из localStorage
+        let cartItems = getCartItems();
+        cartItems = cartItems.filter(item => item !== productTitle); // Удаляем товар по названию
+        saveCartItems(cartItems);
     });
 });
+
+// Применяем сохраненные стили при загрузке страницы
+document.addEventListener('DOMContentLoaded', applyCartStyles);
+
 
 const menuItems = document.querySelectorAll('.navbar-nav .nav-link button');
 let currentIndex = 3;
