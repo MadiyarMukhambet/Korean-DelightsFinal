@@ -1,3 +1,4 @@
+document.getElementById('moon-light').addEventListener('click', toggleMode);
 function toggleMode() {
     document.body.classList.toggle('light-mode'); // Переключаем светлый режим
     const mode = document.body.classList.contains('light-mode') ? 'light' : 'dark';
@@ -11,4 +12,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-document.getElementById('moon-light').addEventListener('click', toggleMode);
