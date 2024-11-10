@@ -286,6 +286,7 @@ function checkAuth() {
         signupContainer.innerHTML = `
             <li class="nav-item me-2"><a class="nav-link" href="login.html"><button class="btn btn-outline-warning"><i class="bi bi-person-circle"></i> Log</button></a></li>
             <li class="nav-item"><a class="nav-link" href="register.html"><button type="button" class="btn btn-warning"><i class="fa-solid fa-key"></i> Register</button></a></li>
+            
         `;
     }
 }
@@ -300,3 +301,16 @@ function logout() {
 
 // Выполнение проверки авторизации при загрузке страницы
 window.addEventListener('load', checkAuth);
+document.addEventListener('DOMContentLoaded', () => {
+    const savedMode = localStorage.getItem('selectedMode') || 'dark'; // По умолчанию темный режим
+    if (savedMode === 'light') {
+        document.body.classList.add('light-mode');
+    }
+});
+document.getElementById('moon-light').addEventListener('click', toggleMode);
+function toggleMode() {
+    document.body.classList.toggle('light-mode'); // Переключаем светлый режим
+    const mode = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+    localStorage.setItem('selectedMode', mode); // Сохраняем выбранный режим
+}
+
