@@ -1,26 +1,9 @@
-
-:root {
-    --background-color: #1f1f1f;
-    --text-color: #ffffff;
-    --color-base: 1, 1, 1;
-    --offer-time: #ccc;
-    --offer-timeP: #777;
-}
-.light-mode {
-    --background-color: #ffffff;
-    --text-color: #000000;
-    --color-base: 0, 0, 0;
-    --offer-time: #333;
-    --offer-timeP: #888;
-
-}
-
 .special-offers {
     margin: 40px auto;
     padding: 20px;
     max-width: 800px;
-    background-color: var(--background-color);
-    box-shadow: 0 4px 8px rgba(var(--color-base) 0.1);
+    /*background-color: var(--background-color);
+    box-shadow: 0 4px 8px rgba(var(--color-base) 0.1);*/
 }
 
 .special-offers h2 {
@@ -30,7 +13,7 @@
 }
 
 .offer-item {
-    border-bottom: 1px solid var(--offer-time);
+    /*border-bottom: 1px solid var(--offer-time);*/
     padding: 15px 0;
     display: flex;
     align-items: center;
@@ -43,90 +26,19 @@
 }
 
 .offer-item h3 {
-    color: var(--offer-time);
+    /*color: var(--offer-time);*/
     font-size: 18px;
     margin-bottom: 5px;
 }
 
 .offer-item p {
-    color: var(--offer-timeP);
+    /*color: var(--offer-timeP);*/
     margin: 5px 0;
 }
 
-.add-to-cart:hover {
+/*.add-to-cart:hover {
     background-color: var(--background-color);
-}
-@font-face {
-    font-family: 'SDAsian';
-    src: url('fonts/Sdasian-WyDon.ttf') format('truetype');
-}
-header h1 {
-    color: var(--text-color);
-    font-size: 50px;
-}
-
-header {
-    display: flex;
-    font-family: 'SDAsian', sans-serif;
-    background-color: var(--background-color);
-}
-
-.navbar ul {
-    list-style: none;
-    gap: 20px;
-}
-
-.navbar ul li a {
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 25px;
-}
-.navbar-toggler {
-    background-color: #ffc107; 
-    border-radius: 5px; 
-}
-body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-footer {
-    background-color: var(--background-color); /* Используем один цвет */
-    font-family: SDAsian, sans-serif;
-    color: var(--text-color); 
-    padding: 20px 0;
-    text-align: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    margin-top: 30px;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.footer-content div {
-    margin: 10px;
-}
-
-footer a {
-    color: #fac200; /* Оранжевый цвет ссылок */
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-footer a:hover {
-    color: var(--button-text-color); /* Белый при наведении */
-}
+}*/
 
 .categories {
     text-align: center;
@@ -149,7 +61,7 @@ footer a:hover {
     height: 150px;
     border-radius: 50%; /* Сделает изображение круглым */
     object-fit: cover; /* Изображение будет обрезаться, чтобы сохранить пропорции */
-    box-shadow: 0 4px 8px rgba(var(--color-base) 0.1); /* Дополнительно добавим тень для красоты */
+   /* box-shadow: 0 4px 8px rgba(var(--color-base) 0.1); */
 }
 
 .category-item h3 {
@@ -171,16 +83,16 @@ footer a:hover {
 
 .product-prices {
     font-size: 18px;
-    color:var(--text-color);
+    /*color:var(--text-color);*/
     font-weight: 600;
 }
 
 .product-prices small {
-    color: var(--offer-time) ;
+    /*color: var(--offer-time) ;*/
     font-weight: 400;
     text-decoration: line-through;
     margin-right: 10px;
 }
 span {
-    color: var(--text-color);
+    /*color: var(--text-color);*/
 }

@@ -11,29 +11,34 @@ body {
     margin: 0;
     padding: 0;
 }
+
 :root {
     --background-color: #1f1f1f;
     --text-color: #ffffff;
+    --accent-color: #ffc107;
+    --link-color: #fac200;
+    --hover-bg-color: #444;
+    --modal-bg-color: rgba(0, 0, 0, 0.5);
+    --border-color: rgba(255, 255, 255, 0.2);
+    --btn-color: #000000;
 }
+
 .light-mode {
     --background-color: #ffffff;
     --text-color: #000000;
-
+    --accent-color: #007bff;
+    --link-color: #0066cc;
+    --hover-bg-color: #f1f1f1;
+    --modal-bg-color: rgba(255, 255, 255, 0.9);
+    --border-color: rgba(0, 0, 0, 0.1);
+    --btn-color: #ffc107;
 }
 
 header {
     display: flex;
     font-family: 'SDAsian', sans-serif;
     background-color: var(--background-color);
-}
-h1 {
-    font-size: 50px;
     color: var(--text-color);
-}
-.signup {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
 }
 
 .navbar ul {
@@ -45,22 +50,52 @@ h1 {
     text-decoration: none;
     font-weight: bold;
     font-size: 25px;
+    color: var(--text-color);
 }
-.navbar-toggler {
-    background-color: #ffc107; 
+
+.navbar-toggler { 
     border-radius: 5px; 
+}
+.light-mode .btn-warning {
+    background-color: #ffc107; /* Оранжевый фон */
+    border: 2px solid #ffc107; /* Оранжевая рамка */
+    color: black; /* Черный цвет текста для контраста */
+}
+
+/* Стиль для обычной кнопки */
+.btn-warning {
+    background-color: #1f1f1f; /* Темный фон */
+    color: #ffc107; /* Оранжевый цвет текста */
+    border: 2px solid #ffc107; /* Оранжевая рамка */
+    border-radius: 5px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Анимация для трансформации и тени */
+}
+
+.btn-warning:hover {
+    transform: scale(1.05); /* Увеличение кнопки при наведении */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Легкая тень при наведении */
+}
+#language-selector {
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#language-selector:hover, #language-selector:focus {
+    border-color: var(--accent-color); /* Изменение цвета границы */
+    box-shadow: 0 0 5px rgba(255, 193, 7, 0.5); /* Добавление лёгкой тени */
 }
 
 footer {
-    background-color: var(--background-color); /* Используем один цвет */
-    font-family: SDAsian, sans-serif;
-    color: var(--text-color); 
+    background-color: var(--background-color);
+    font-family: 'SDAsian', sans-serif;
+    color: var(--text-color);
     padding: 20px 0;
     text-align: center;
     position: relative;
     bottom: 0;
     width: 100%;
     margin-top: 30px;
+    border-top: 1px solid var(--border-color);
 }
 
 .footer-content {
@@ -77,15 +112,19 @@ footer {
 }
 
 footer a {
-    color: #fac200; /* Оранжевый цвет ссылок */
+    color: var(--link-color);
     text-decoration: none;
     margin: 0 10px;
 }
 
 footer a:hover {
-    color: var(--button-text-color); /* Белый при наведении */
+    color: var(--accent-color);
 }
-
+.signup {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
 .hero {
     background: url('images/hero-background.jpg') no-repeat center center/cover;
     color: #fff;
@@ -152,29 +191,6 @@ footer a:hover {
     background: #e65c00;
 }
 
-.footer-content {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-}
-
-.social-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 0.5rem;
-}
-
-.social-links li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.social-links li a:hover {
-    text-decoration: underline;
-}
 .cart-items {
     display: flex;
     justify-content: space-around; /* Распределяет элементы по горизонтали с равными отступами */

@@ -291,7 +291,7 @@ function checkAuth() {
     }
 }
 
-// Функция выхода из аккаунта
+/*// Функция выхода из аккаунта
 function logout() {
     localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('userEmail');
@@ -312,5 +312,5 @@ function toggleMode() {
     document.body.classList.toggle('light-mode'); // Переключаем светлый режим
     const mode = document.body.classList.contains('light-mode') ? 'light' : 'dark';
     localStorage.setItem('selectedMode', mode); // Сохраняем выбранный режим
-}
+}*/
 

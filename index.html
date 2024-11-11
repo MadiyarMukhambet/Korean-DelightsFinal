@@ -13,7 +13,7 @@
    <header>
         <div class="container-fluid">
             <div class="d-flex justify-content-between align-items-center flex-wrap">
-                <h1 style="font-size: 50px;">Korean Delights</h1>
+                <b><h1 style="font-size: 50px;">Korean Delights</h1></b>
                 <select id="language-selector" class="form-select w-auto">
                     <option value="en" selected>English</option>
                     <option value="kr">한국어 (Korean)</option>
@@ -26,48 +26,47 @@
                         <ul class="navbar-nav mb-lg-0">
                             <li class="nav-item">
                                 <a class="nav-link" href="index.html">
-                                    <button class="btn btn-outline-warning">
+                                    <button class="btn btn-warning">
                                         <i class="bi bi-shop"></i> <span data-key="home">Home</span>
                                     </button>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="shop.html">
-                                    <button class="btn btn-outline-warning">
+                                    <button class="btn btn-warning">
                                         <i class="fas fa-hotdog"></i> <span data-key="shop">Shop</span>
                                     </button>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="specials.html">
-                                    <button class="btn btn-outline-warning">
+                                    <button class="btn btn-warning">
                                         <i class="bi bi-lightning-charge"></i> <span data-key="specials">Special Offers</span>
                                     </button>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="wishlist.html">
-                                    <button class="btn btn-outline-warning">
+                                    <button class="btn btn-warning">
                                         <i class="bi bi-bag-heart"></i> <span data-key="wishlist">Wishlist</span>
                                     </button>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="cart.html">
-                                    <button class="btn btn-outline-warning">
+                                    <button class="btn btn-warning">
                                         <i class="bi bi-basket2-fill"></i> <span data-key="cart">Cart(0)</span>
                                     </button>
-                </div>
+                    </div>
             </nav>
             <div class="d-flex flex-column align-items-end">
                 <ul class="signup d-flex flex-wrap mb-2">
-                    <li class="nav-item me-2"><a class="nav-link" href="login.html"><button class="btn btn-outline-warning"><i class="bi bi-person-circle"></i> Log</button></a></li>
+                    <li class="nav-item me-2"><a class="nav-link" href="login.html"><button class="btn btn-warning"><i class="bi bi-person-circle"></i> Log</button></a></li>
                     <li class="nav-item"><a class="nav-link" href="register.html"><button type="button" class="btn btn-warning"><i class="fa-solid fa-key"></i> Register</button></a></li>
-                    <li class="nav-itewm"><button type="button" class="btn btn-warning" id="moon-light"><i class="bi-moon-fill"></i></button></a></li>
                 </ul>
                 <form class="d-flex w-100 mt-lg-2" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success text-bg-warning" type="submit">Search</button>
+                    <button class="btn btn-warning text-bg-warning" type="submit">Search</button>
                 </form>
             </div>
         </div>
@@ -85,42 +84,6 @@
             <a href="shop.html" class="btn btn-danger"><i class="fa-solid fa-cart-shopping"></i>Shop Now</a>
         </div>
     </section>
-
-    <section class="product-filter">
-    <h3>Filter Products</h3>
-
-    <!-- Фильтр по цене -->
-    <div class="price-filter">
-        <label for="min-price">Min Price:</label>
-        <input type="number" id="min-price" placeholder="0" min="0">
-        <label for="max-price">Max Price:</label>
-        <input type="number" id="max-price" placeholder="100" min="0">
-    </div>
-
-    <!-- Фильтр по категориям -->
-    <div class="category-filter">
-        <label for="category">Category:</label>
-        <select id="category">
-            <option value="all" selected>All</option>
-            <option value="noodles">Instant Noodles</option>
-            <option value="spices">Spices</option>
-            <option value="sauces">Sauces</option>
-            <option value="snacks">Snacks</option>
-        </select>
-    </div>
-
-    <!-- Специальные предложения -->
-    <div class="offers-filter">
-        <label>
-            <input type="checkbox" id="special-offer" value="special">
-            Only Special Offers
-        </label>
-    </div>
-
-    <button id="apply-filter" class="btn btn-outline-warning">Apply Filter</button>
-</section>
-
-
     <section class="categories">
         <h2>Popular Categories</h2>
         <div class="category-list">
@@ -170,11 +133,6 @@
             </div>
         </div>
     </section>
-    
-    
-    
-    
-
     <div class="container text-center">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
           <div class="col text-danger">Compliance with quality <i class="fa-regular fa-handshake"></i></div>
@@ -213,24 +171,25 @@
     </section>
 
     <section class="special-offers">
-        <h2>Special Offers</h2>
-        <div class="offer-item">
-            <h3>20% Off on Sauces</h3>
-            <p>Use code: SPICY20</p>
-            <a href="shop.html" class="btn btn-danger"><i class="fa-solid fa-cart-shopping"></i> Shop Now</a>
-        </div>
-        <div class="offer-item">
-            <h3>Buy 2 Get 1 Free on Snacks</h3>
-            <p>Available on selected items</p>
-            <a href="shop.html" class="btn btn-danger"><i class="fa-solid fa-cart-shopping"></i> Shop Now</a>
-        </div>
-    </section>
+    <h2>Special Offers</h2>
+    <div class="offer-item">
+        <h3>20% Off on Sauces</h3>
+        <p>Use code: SPICY20</p>
+        <a href="shop.html" class="btn btn-danger"><i class="fa-solid fa-cart-shopping"></i> Shop Now</a>
+    </div>
+    <div class="offer-item">
+        <h3>Buy 2 Get 1 Free on Snacks</h3>
+        <p>Available on selected items</p>
+        <a href="shop.html" class="btn btn-danger"><i class="fa-solid fa-cart-shopping"></i> Shop Now</a>
+    </div>
+</section>
 
+<section class="newsletter">
+    <h2>Subscribe for Offers</h2>
+    <p>Stay updated with our latest offers and discounts.</p>
+    <button id="openModalBtn" class="btn btn-warning">Subscribe Now</button>
+</section>
 
-    <section class="newsletter">
-        <h2>Subscribe for Offers</h2>
-        <p>Stay updated with our latest offers and discounts.</p>
-        <button id="openModalBtn" class="btn btn-warning">Subscribe Now</button>
 
 <!-- Subscribe BUTTON (3) -->
 <div id="subscribeModal" class="modal">
@@ -285,10 +244,11 @@
                 </div>
                 <div>
                     <h3>Navigation</h3>
-                    <a href="index.html"><button class="btn btn-outline-warning"><i class="bi bi-shop"></i>Home</button></a>
-                    <a href="shop.html"><button class="btn btn-outline-warning"><i class="fas fa-hotdog"></i>Shop</button></a>
-                    <a href="contact.html"><button class="btn btn-outline-warning"><i class="bi bi-envelope"></i>Contact</button></a>
-                    <a href="about.html"><button class="btn btn-outline-warning"><i class="bi bi-info-circle"></i>About us</button></a>
+                    <a href="index.html"><button class="btn btn-warning"><i class="bi bi-shop"></i>Home</button></a>
+                    <a href="shop.html"><button class="btn btn-warning"><i class="fas fa-hotdog"></i>Shop</button></a>
+                    <a href="contact.html"><button class="btn btn-warning"><i class="bi bi-envelope"></i>Contact</button></a>
+                    <a href="about.html"><button class="btn btn-warning"><i class="bi bi-info-circle"></i>About us</button></a>
+                    <button type="button" class="btn btn-warning" id="moon-light"><i class="bi-moon-fill"></i></button>
                 </div>
                 <div class="social-links">
                     <h3><i class="bi bi-instagram"></i>Social-links</h3>
