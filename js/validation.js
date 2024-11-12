@@ -1,7 +1,67 @@
-function validateEmail(email) {
+function validateEmail(uemail) {
   const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  return emailPattern.test(email);
-}
+  return emailPattern.test(uemail);
+} 
+let firstName = document.querySelector('#firstName');
+let lastName = document.querySelector('#lastName');
+let username = document.querySelector('#username');
+let email = document.querySelector('#uemail');
+let password = document.querySelector('#password');
+
+let users = JSON.parse(localStorage.getItem('users')) || {};
+
+function User(firstName, email, password, username) {
+    this.firstName = firstName;
+    this.email = email;
+    this.password = password;
+    }
+    function createId(users) {
+    return Object.keys(users).length;
+    }
+
+const submitButton = document.getElementById('submit');
+
+submitButton.addEventListener('click', (event) => {
+    event.preventDefault(); // Останавливаем отправку формы по умолчанию
+
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
+    const email = document.getElementById('uemail').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const username = document.getElementById('username').value.trim();
+
+    if (!validateEmail(email)) {
+        alert('Некорректный email');
+        return;
+    }
+
+    // Загружаем или инициализируем объект users из localStorage
+    const users = JSON.parse(localStorage.getItem('users')) || {};
+    const userId = 'User' + (Object.keys(users).length + 1); // Уникальный ID для нового пользователя
+
+    // Создаем объект нового пользователя
+    const user = {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        password: password,
+        username: username
+    };
+
+    // Сохраняем пользователя в объекте users
+    users[userId] = user;
+
+    // Обновляем объект users и текущего пользователя в localStorage
+    localStorage.setItem('users', JSON.stringify(users));
+    localStorage.setItem('currentUser', userId); // Сохраняем текущего пользователя
+
+    alert('Регистрация успешна!');
+    window.location.href = 'login.html';
+
+});
+
+
+
 
 const step1 = document.getElementById('step-1');
 const step2 = document.getElementById('step-2');
@@ -17,7 +77,7 @@ const errorMessages = document.getElementById('errorMessages');
 
 // Переходы между шагами
 nextStep1.addEventListener('click', () => {
-  let email = document.getElementById('email').value.trim();
+  let email = document.getElementById('uemail').value.trim();
   let username = document.getElementById('username').value.trim();
 
   errorMessages.innerHTML = '';
@@ -91,19 +151,7 @@ form.addEventListener('submit', (event) => {
       step3.style.display = 'none';
   }
 });
-function checkAuth() {
-    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-    const signupContainer = document.querySelector('.signup');
 
-    if (isLoggedIn) {
-        signupContainer.innerHTML = `<button class="btn btn-outline-warning" onclick="logout()">Logout</button>`;
-    } else {
-        signupContainer.innerHTML = `
-            <li class="nav-item me-2"><a class="nav-link" href="login.html"><button class="btn btn-outline-warning"><i class="bi bi-person-circle"></i> Log</button></a></li>
-            <li class="nav-item"><a class="nav-link" href="register.html"><button type="button" class="btn btn-warning"><i class="fa-solid fa-key"></i> Register</button></a></li>
-        `;
-    }
-}
 
 // Функция выхода из аккаунта
 function logout() {
@@ -114,4 +162,3 @@ function logout() {
 }
 
 // Выполнение проверки авторизации при загрузке страницы
-window.addEventListener('load', checkAuth);

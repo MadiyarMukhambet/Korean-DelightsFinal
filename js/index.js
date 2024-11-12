@@ -314,3 +314,63 @@ function toggleMode() {
     localStorage.setItem('selectedMode', mode); // Сохраняем выбранный режим
 }*/
 
+document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.querySelector("input[type='search']");
+    const searchButton = document.querySelector("button[type='submit']");
+    
+    searchButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        const searchText = searchInput.value.toLowerCase();
+        const products = document.querySelectorAll(".product-item");
+        const categories = document.querySelectorAll(".category-item");
+        
+        // Скрываем или показываем продукты по совпадению текста
+        products.forEach((product) => {
+            const title = product.querySelector(".product-title").textContent.toLowerCase();
+            product.style.display = title.includes(searchText) ? "block" : "none";
+        });
+
+        // Скрываем или показываем категории по совпадению текста
+        categories.forEach((category) => {
+            const title = category.querySelector("h3").textContent.toLowerCase();
+            category.style.display = title.includes(searchText) ? "block" : "none";
+        });
+    });
+});
+
+
+// Обработчик открытия и закрытия модального окна
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('productModal');
+    const closeModalBtn = modal.querySelector('.close');
+    const closeBtn = modal.querySelector('.close-btn');
+
+    // Функция для открытия модального окна с деталями товара
+    function openModal(title, imageSrc, price, description) {
+        modal.style.display = 'block';
+        document.getElementById('product-title').innerText = title;
+        document.getElementById('product-image').src = imageSrc;
+        document.getElementById('product-price').innerText = `Price: ${price}`;
+        document.getElementById('product-description').innerText = description;
+    }
+
+    // Обработчики закрытия модального окна
+    closeModalBtn.onclick = () => { modal.style.display = 'none'; };
+    closeBtn.onclick = () => { modal.style.display = 'none'; };
+    window.onclick = (event) => { if (event.target === modal) modal.style.display = 'none'; };
+
+    // Добавление обработчиков событий к кнопкам "View Details"
+    document.querySelectorAll('.product-item .btn-danger').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const productItem = e.target.closest('.product-item');
+            const title = productItem.querySelector('.product-title').innerText;
+            const imageSrc = productItem.querySelector('img').src;
+            const price = productItem.querySelector('p').innerText;
+            const description = `Detailed description of ${title}.`; // Добавьте описание по вашему желанию
+
+            openModal(title, imageSrc, price, description);
+        });
+    });
+});
+
+

@@ -220,3 +220,6 @@ footer a:hover {
 .card:hover{
     background: #d8d3d3;
 }
+.dropdown-toggle {
+    margin-bottom: 10px;
+}

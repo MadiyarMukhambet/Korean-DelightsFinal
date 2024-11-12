@@ -58,12 +58,11 @@
                                     <button class="btn btn-warning">
                                         <i class="bi bi-basket2-fill"></i> <span data-key="cart">Cart(0)</span>
                                     </button>
-                </div>
+                    </div>
             </nav>
             <div class="d-flex flex-column align-items-end">
                 <ul class="signup d-flex flex-wrap mb-2">
-                    <li class="nav-item me-2"><a class="nav-link" href="login.html"><button class="btn btn-warning"><i class="bi bi-person-circle"></i> Log</button></a></li>
-                    <li class="nav-item"><a class="nav-link" href="register.html"><button type="button" class="btn btn-warning"><i class="fa-solid fa-key"></i> Register</button></a></li>
+                    <li class="nav-item me-2"><a class="nav-link" href="login.html" id="profile-link"><button class="btn btn-outline-warning"><i class="bi bi-person-circle"></i> Profile</button></a></li>
                 </ul>
                 <form class="d-flex w-100 mt-lg-2" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -148,35 +147,31 @@
     </div>
 
     <!-- Специальные предложения -->
-    <div class="offers-filter">
-        <label>
-            <input type="checkbox" id="special-offer" value="special">
-            Only Special Offers
-        </label>
-    </div>
-
     <button id="apply-filter" class="btn btn-outline-warning">Apply Filter</button>
 </section>
 <section class="product-grid">
-        <div class="card" data-category="noodles" data-special-offer="true" style="width: 18rem;">
+    <div class="card" data-category="noodles" data-special-offer="true" style="width: 18rem;"
+         data-description="A popular spicy noodle dish." 
+         data-ingredients="Noodles, Spicy Sauce, Soybean Oil, Red Pepper, Garlic">
             <img src="image/buldak.jpg" class="card-img-top" alt="Buldak Spicy Noodles">
-            <div class="card-body">
-                <h5 class="card-title">Buldak Spicy Noodles</h5>
-            <p>$3.99</p>
-            <a href="product.html" class="add-to-cart"><button class="btn btn-danger">View Details</button></a>
-                <a class="add-to-wishlist"><button class="btn btn-danger"><i class="bi bi-bag-heart"></i>In Wishlist</button></a>
-            </div>
-                <div class="rating">
-                    <span>Rating: <i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span>
-                 
-                </div>
-        </div>
+    <div class="card-body">
+        <h5 class="card-title">Buldak Spicy Noodles</h5>
+        <p>$3.99</p>
+        <button class="btn btn-danger">View Details</button>
+        <a class="add-to-wishlist"><button class="btn btn-danger"><i class="bi bi-bag-heart"></i> In Wishlist</button></a>
+    </div>
+    <div class="rating">
+        <span>Rating: <i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span>
+    </div>
+</div>
+
+    
         <div class="card" data-category="spices" data-special-offer="false" style="width: 18rem;">
             <img src="image/kimchi.jpg" class="card-img-top" alt="Kimchi Seasoning">
             <div class="card-body">
                 <h5 class="card-title">Kimchi Seasoning</h5>
                 <p>$4.99</p>
-                <a href="product.html" class="add-to-cart"><button class="btn btn-danger">View Details</button></a>
+                <a class="add-to-cart"><button class="btn btn-danger">View Details</button></a>
                 <a class="add-to-wishlist"><button class="btn btn-danger"><i class="bi bi-bag-heart"></i>In Wishlist</button></a>
             </div>
             <div class="rating">
@@ -188,7 +183,7 @@
             <div class="card-body">
                 <h5 class="card-title">Toasted Perilla Oil</h5>
                 <p>$31.99</p>
-                <a href="Toasted_Perilla_Oil.html" class="add-to-cart"><button class="btn btn-danger">View Details</button></a>
+                <a class="add-to-cart"><button class="btn btn-danger">View Details</button></a>
                 <a class="add-to-wishlist"><button class="btn btn-danger"><i class="bi bi-bag-heart"></i>In Wishlist</button></a>
             </div>
                 <div class="rating">
@@ -196,7 +191,99 @@
 
                 </div>
         </div>
+            <!-- Наличие товаров "Instant Noodles" -->
+        <div class="card" data-category="noodles" data-special-offer="false" style="width: 18rem;">
+            <img src="image/ramen.jpg" class="card-img-top" alt="Ramen">
+            <div class="card-body">
+                <h5 class="card-title">Buldak Spicy x3</h5>
+                <p>$2.99</p>
+                <a class="add-to-cart"><button class="btn btn-danger">View Details</button></a>
+                <a class="add-to-wishlist"><button class="btn btn-danger"><i class="bi bi-bag-heart"></i>In Wishlist</button></a>
+            </div>
+            <div class="rating">
+                <span>Rating: <i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span>
+            </div>
+        </div>
+        
+            <!-- Наличие товаров "Spices" -->
+        <div class="card" data-category="spices" data-special-offer="true" style="width: 18rem;">
+            <img src="image/gochugaru.jpg" class="card-img-top" alt="Gochugaru">
+            <div class="card-body">
+                <h5 class="card-title">Gochugaru</h5>
+                <p>$5.99</p>
+                <a class="add-to-cart"><button class="btn btn-danger">View Details</button></a>
+                <a class="add-to-wishlist"><button class="btn btn-danger"><i class="bi bi-bag-heart"></i>In Wishlist</button></a>
+            </div>
+            <div class="rating">
+                <span>Rating: <i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span>
+            </div>
+        </div>
+        
+            <!-- Наличие товаров "Sauces" -->
+        <div class="card" data-category="sauces" data-special-offer="true" style="width: 18rem;">
+            <img src="image/gochujang.jpg" class="card-img-top" alt="Gochujang Sauce">
+            <div class="card-body">
+                <h5 class="card-title">Gochujang Sauce</h5>
+                <p>$8.99</p>
+                <a class="add-to-cart"><button class="btn btn-danger">View Details</button></a>
+                <a class="add-to-wishlist"><button class="btn btn-danger"><i class="bi bi-bag-heart"></i>In Wishlist</button></a>
+            </div>
+            <div class="rating">
+                <span>Rating: <i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span>
+            </div>
+        </div>
+        
+        <div class="card" data-category="snacks" data-special-offer="false" style="width: 18rem;">
+            <img src="image/mochi.jpg" class="card-img-top" alt="Mochi">
+            <div class="card-body">
+                <h5 class="card-title">Mochi</h5>
+                <p>$6.49</p>
+                <a class="add-to-cart"><button class="btn btn-danger">View Details</button></a>
+                <a class="add-to-wishlist"><button class="btn btn-danger"><i class="bi bi-bag-heart"></i>In Wishlist</button></a>
+            </div>
+            <div class="rating">
+                <span>Rating: <i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span>
+            </div>
+        </div>
+
+        <div class="card" data-category="snacks" data-special-offer="false" style="width: 18rem;">
+            <img src="image/dorayaki.jpg" class="card-img-top" alt="Dorayaki">
+            <div class="card-body">
+                <h5 class="card-title">Dorayaki</h5>
+                <p>$12.49</p>
+                <a class="add-to-cart"><button class="btn btn-danger">View Details</button></a>
+                <a class="add-to-wishlist"><button class="btn btn-danger"><i class="bi bi-bag-heart"></i>In Wishlist</button></a>
+            </div>
+            <div class="rating">
+                <span>Rating: <i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></span>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="productModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="product-title"></h2>
+                <img id="product-image" src="" alt="Product Image" style="width:100%;">
+                <p id="product-price"></p>
+                <p id="product-description"></p>
+                <p id="product-ingredients"></p>
+            </div>
+        </div>
+        
+
     </section>
+<!-- Modal -->
+<div id="productModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <h2 id="product-title"></h2>
+        <img id="product-image" src="" alt="Product Image" style="width:100%; height: auto;">
+        <p id="product-price"></p>
+        <p id="product-description"></p>
+        <p id="product-ingredients"></p>
+        <button id="closeModalButton" class="close-but">Close</button> <!-- Кнопка закрытия внизу -->
+    </div>
+</div>
     <footer>
             <div class="footer-content">
                 <div>

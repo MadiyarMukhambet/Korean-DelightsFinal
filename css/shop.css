@@ -287,7 +287,7 @@ h2 {
 /* Container for the product filter section */
 /* Общие стили фильтра */
 .product-filter {
-    max-width: 500px;
+    max-width: 350px;
     margin: 20px auto;
     padding: 20px;
     background-color: var(--background-color);
@@ -376,5 +376,108 @@ button#apply-filter:active {
 .light-mode .product-filter {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Добавление эффекта увеличения для всех карточек при наведении */
+.product-grid .card {
+    transition: transform 0.3s ease;
+}
+
+.product-grid .card:hover {
+    transform: scale(1.05); /* Увеличение карточки на 5% */
+}
+
+/* Переход для кнопок при наведении */
+.product-grid .card .btn {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Эффект подъема кнопок при наведении */
+.product-grid .card .btn:hover {
+    transform: translateY(-3px); /* Поднимает кнопку на 3 пикселя */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Добавляет небольшую тень */
+}
+
+/* Центрирование блока категорий */
+.categories .category-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Расстояние между элементами */
+}
+
+.category-item {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.category-item:hover {
+    transform: scale(1.1); /* Увеличивает элемент на 10% */
+}
+
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный фон */
+}
+
+.modal-content {
+    position: relative; /* Относительное позиционирование */
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+
+.modal-content h3 {
+    color: #333;
+}
+
+.modal-content p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Close button inside the modal */
+.close-but {
+    position: absolute; /* Позиционирование внутри модального окна */
+    bottom: 10px; /* Положение снизу */
+    right: 10px; /* Положение справа */
+    background-color: #ff4c4c;
+    color: #fff;
+    padding: 5px 10px; /* Меньше отступов для меньшей кнопки */
+    border: none;
+    border-radius: 5px; /* Скругленные углы */
+    cursor: pointer;
+    font-size: 14px; /* Меньший размер шрифта */
+}
+
+.close-but:hover {
+    background-color: #ff3333;
+}
+
+/* Optional: Style for a close button outside the modal */
+.modal .close {
+    background-color: #dc3545; /* Красная кнопка */
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.modal .close:hover {
+    background-color: #c82333;
 }
 

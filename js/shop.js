@@ -110,19 +110,7 @@ if (event.key === 'ArrowUp') {
 }
 });
 setFocus(currentIndex);
-function checkAuth() {
-    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-    const signupContainer = document.querySelector('.signup');
 
-    if (isLoggedIn) {
-        signupContainer.innerHTML = `<button class="btn btn-outline-warning" onclick="logout()">Logout</button>`;
-    } else {
-        signupContainer.innerHTML = `
-            <li class="nav-item me-2"><a class="nav-link" href="login.html"><button class="btn btn-outline-warning"><i class="bi bi-person-circle"></i> Log</button></a></li>
-            <li class="nav-item"><a class="nav-link" href="register.html"><button type="button" class="btn btn-warning"><i class="fa-solid fa-key"></i> Register</button></a></li>
-        `;
-    }
-}
 
 // Функция выхода из аккаунта
 function logout() {
@@ -133,7 +121,7 @@ function logout() {
 }
 
 // Выполнение проверки авторизации при загрузке страницы
-window.addEventListener('load', checkAuth);
+
 
  document.addEventListener("DOMContentLoaded", function () {
     // Загрузка фильтров из localStorage
@@ -186,4 +174,70 @@ window.addEventListener('load', checkAuth);
 
     // Обработчик кнопки "Apply Filter"
     document.getElementById("apply-filter").addEventListener("click", filterProducts);
+});
+ // JavaScript для открытия модального окна и отображения информации о продукте
+document.addEventListener("DOMContentLoaded", function () {
+    // Получаем все кнопки "View Details"
+    const viewDetailButtons = document.querySelectorAll(".btn-danger");
+    const modal = document.getElementById("productModal");
+    const closeModalButton = modal.querySelector(".close");
+
+    // Элементы модального окна, в которые будем вставлять информацию о продукте
+    const modalTitle = document.getElementById("product-title");
+    const modalImage = document.getElementById("product-image");
+    const modalPrice = document.getElementById("product-price");
+    const modalDescription = document.getElementById("product-description");
+    const modalIngredients = document.getElementById("product-ingredients");
+
+    // Функция открытия модального окна
+    function openModal(card) {
+        const title = card.querySelector(".card-title").innerText;
+        const price = card.querySelector("p").innerText;
+        const imageSrc = card.querySelector("img").src;
+        const description = card.getAttribute("data-description");
+        const ingredients = card.getAttribute("data-ingredients");
+
+        modalTitle.innerText = title;
+        modalPrice.innerText = `Price: ${price}`;
+        modalImage.src = imageSrc;
+        modalDescription.innerText = `Description: ${description}`;
+        modalIngredients.innerText = `Ingredients: ${ingredients}`;
+
+        modal.style.display = "block";
+    }
+
+    // Закрытие модального окна
+    closeModalButton.onclick = function () {
+        modal.style.display = "none";
+    };
+
+    // Закрытие модального окна при клике за пределами его содержимого
+    window.onclick = function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+
+    // Привязка события "click" к каждой кнопке "View Details"
+    viewDetailButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            const card = button.closest(".card");
+            openModal(card);
+        });
+    });
+});
+// Получаем модальное окно и кнопку закрытия
+var modal = document.querySelector('.modal');
+var closeButton = document.querySelector('.close-btn');
+
+// Когда пользователь нажимает на кнопку закрытия
+closeButton.addEventListener('click', function() {
+  modal.style.display = 'none'; // Закрываем модальное окно
+});
+
+// Когда пользователь кликает в любом месте за пределами модального окна, оно тоже закрывается
+window.addEventListener('click', function(event) {
+  if (event.target === modal) {
+    modal.style.display = 'none'; // Закрываем модальное окно
+  }
 });

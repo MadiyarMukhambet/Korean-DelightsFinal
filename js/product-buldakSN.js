@@ -46,19 +46,6 @@ showIngredientsButton.addEventListener('click', function() {
         });
     }
 });
-function checkAuth() {
-    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-    const signupContainer = document.querySelector('.signup');
-
-    if (isLoggedIn) {
-        signupContainer.innerHTML = `<button class="btn btn-outline-warning" onclick="logout()">Logout</button>`;
-    } else {
-        signupContainer.innerHTML = `
-            <li class="nav-item me-2"><a class="nav-link" href="login.html"><button class="btn btn-outline-warning"><i class="bi bi-person-circle"></i> Log</button></a></li>
-            <li class="nav-item"><a class="nav-link" href="register.html"><button type="button" class="btn btn-warning"><i class="fa-solid fa-key"></i> Register</button></a></li>
-        `;
-    }
-}
 
 // Функция выхода из аккаунта
 function logout() {
@@ -69,4 +56,3 @@ function logout() {
 }
 
 // Выполнение проверки авторизации при загрузке страницы
-window.addEventListener('load', checkAuth);

@@ -3,56 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Korean Delights - Account</title>
-    <link rel="stylesheet" href="account.css">
+    <title>Korean Delights - Wishlist</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/account.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-    <div class="logo">
-        <h1>Korean Delights</h1>
-    </div>
-    <nav class="nav">
-        <ul> 
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="specials.html">Special Offers</a></li>
-            <li><a href="wishlist.html">Wishlist</a></li>
-            <li><a href="cart.html">Cart(0)</a></li>
-        </ul>
-    </nav>
-    <div class="signup">
-        <ul>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html">Register</a></li>
-        </ul>
-    </div>
-    <div class="search-bar">
-        <input type="text" placeholder="Search for products..." id="search">
-        <button type="submit">Search</button>
-    </div>
-</header>
+    <body>
+        <header>
+            <div class="container-fluid">
+                <div class="d-flex justify-content-between align-items-center flex-wrap">
+                    <h1 style="font-size: 50px;">Korean Delights</h1>
+                    <select id="language-selector" class="form-select w-auto">
+                        <option value="en" selected>English</option>
+                        <option value="kr">한국어 (Korean)</option>
+                    </select>
+                    <nav class="navbar navbar-expand-sm navbar-light">
+                        <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html">
+                                        <button class="btn btn-outline-warning">
+                                            <i class="bi bi-shop"></i> <span data-key="home">Home</span>
+                                        </button>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="shop.html">
+                                        <button class="btn btn-outline-warning">
+                                            <i class="fas fa-hotdog"></i> <span data-key="shop">Shop</span>
+                                        </button>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="specials.html">
+                                        <button class="btn btn-outline-warning">
+                                            <i class="bi bi-lightning-charge"></i> <span data-key="specials">Special Offers</span>
+                                        </button>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="wishlist.html">
+                                        <button class="btn btn-outline-warning">
+                                            <i class="bi bi-bag-heart"></i> <span data-key="wishlist">Wishlist</span>
+                                        </button>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="cart.html">
+                                        <button class="btn btn-outline-warning">
+                                            <i class="bi bi-basket2-fill"></i> <span data-key="cart">Cart(0)</span>
+                                        </button>
+                    </div>
+                </nav>
+                <div class="d-flex flex-column align-items-end">
+                    <ul class="signup d-flex flex-wrap mb-2">
+                        <li class="nav-item me-2"><a class="nav-link" href="login.html" id="profile-link"><button class="btn btn-outline-warning"><i class="bi bi-person-circle"></i> Profile</button></a></li>
+                    </ul>
+                    <form class="d-flex w-100 mt-lg-2" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success text-bg-warning" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
     <section class="account-info">
         <h2>Your Account</h2>
         <div class="account-details">
             <h3>Personal Information</h3>
-            <p>Name: -</p>
-            <p>Email: -@example.com</p>
-            <p>Phone: +123456789</p>
-            <button class="edit-button">Edit Information</button>
-        </div>
-        <div class="address-info">
-            <h3>Shipping Address</h3>
-            <p>123 Main Street, Seoul, Korea</p>
-            <button class="edit-button">Edit Address</button>
-        </div>
-        <div class="payment-info">
-            <h3>Payment Methods</h3>
-            <p>Credit Card ending in 1234</p>
-            <button class="edit-button">Edit Payment Methods</button>
-        </div>
-        <div class="order-history">
-            <h3>Order History</h3>
-            <a href="orders.html">View Your Orders</a>
+            <p>Name:<span id="firstName">Загрузка...</span></p>
+            <p>Lastname:<span id="lastName">Загрузка...</span></p></p>
+            <p>Email:<span id="email">Загрузка...</span></p></p>
+            <button onclick="logout()" class="btn btn-outline-warning">Logout</button>
         </div>
     </section>
 
@@ -79,5 +107,32 @@
         </div>
                 <p>&copy; 2024 Korean Shop.</p>
     </footer>
+    <script>
+        // Получаем текущего пользователя из localStorage
+        const currentUser = localStorage.getItem('currentUser');
+        const users = JSON.parse(localStorage.getItem('users'));
+
+        // Проверяем, что пользователь найден в localStorage
+        if (currentUser && users && users[currentUser]) {
+            const user = users[currentUser];
+            document.getElementById('firstName').textContent = user.firstName || "Имя не указано";
+            document.getElementById('lastName').textContent = user.lastName || "Фамилия не указана";
+            document.getElementById('email').textContent = user.email || "Email не указан";
+        } else {
+            console.error("Не удалось найти данные пользователя. Проверьте, сохранены ли данные в localStorage.");
+            document.getElementById('firstName').textContent = "Неизвестный пользователь";
+            document.getElementById('lastName').textContent = "Фамилия не указана";
+            document.getElementById('email').textContent = "Email не указан";
+        }
+
+        // Функция для выхода
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('currentUser');
+            alert('Вы успешно вышли из аккаунта.');
+            window.location.href = "index.html";
+        }
+    </script>
+<script src="js/session.js"></script>
 </body>
 </html>
